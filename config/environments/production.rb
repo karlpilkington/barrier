@@ -59,6 +59,7 @@ StartupWeekend::Application.configure do
 
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+  config.assets.precompile += %w( dashboard.js dashboard.css home.css login.css )
   # config.assets.precompile += %w( search.js )
 
   # Ignore bad email addresses and do not raise email delivery errors.
