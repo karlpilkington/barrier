@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <%= stylesheet_link_tag "dashboard" %>
-
+    <%= javascript_include_tag "jquery" %>
+    <%= javascript_include_tag "dashboard" %>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -14,201 +17,238 @@
     <![endif]-->
   </head>
   <body>
-<nav class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="index.html"><img id="logo" src="assets/barrier-logo.png"></a>
-  </div>
+    <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img id="logo" src="assets/barrier-logo.png"></a>
+      </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="navbar">
-    <ul class="nav navbar-nav">
-      <li><a href="#">Sugar Plum</a></li>
-        <li><a href="#">Cheesecake</a></li>
-        <li><a href="#">Fruitcake Candy</a></li>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</nav>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="nav navbar-nav">
+<!--           <li><a href="#">Sugar Plum</a></li>
+            <li><a href="#">Cheesecake</a></li>
+            <li><a href="#">Fruitcake Candy</a></li> -->
+            <li>Last Refresh: 5 minutes</li>
+            <li><a class="glyphicon glyphicon-refresh refresher"></a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
 
-<div class="row">
-  <div class="col-sm-4 col-md-4">
-    <div>
-      <h1>Overall - Suspicious</h1>
-      <p id="overall-suspicious">$1,200</p>
-    </div>
-  </div>
-  <div class="col-sm-8 col-md-8">
-    <div>
-        <h1>Suspicious Transactions</h1>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Vendor</th>
-              <th>Amount</th>
-              <th>Balance ($)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="flagged" style="background-color: #F26344">
-              <td>Chupa Chups</td>
-              <td>$8,600</td>
-              <td>Action Pending</td>
-            </tr>
-            <tr class="flagged" style="background-color: #F26344">
-              <td>Bonbon Danish</td>
-              <td>$2,300</td>
-              <td>Awaiting Response</td>
-            </tr>
-<!--                 <tr class="flagged" style="background-color: #F26344">
-              <td>Sugar Plum</td>
-              <td>$1,500</td>
-              <td>Bank Notified - Pending</td>
-            </tr> -->
-            <tr class="cancelled" style="background-color: #EDEDED">
-              <td>Cotton Candy</td>
-              <td>$600</td>
-              <td>Transaction Cancelled</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-  </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-4 col-md-4">
-      <div>
-        <h1>Account Breakdown</h1>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Account Name</th>
-              <th>Balance ($)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Bank of America</td>
-              <td>$244,295</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Small Credit Union</td>
-              <td>$123,439</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Coolest Bank of the Country</td>
-              <td>$97,363</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Alternate Bank</td>
-              <td>$56,043</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Other Bank</td>
-              <td>$35,203</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div>
-        <h1>Transaction Types</h1>
-        <img id="donut-chart" src="assets/donut-chart.png"/>
-      </div>
-      <div>
-        <h1>Activity Location</h1>
-        <img id="map" src="assets/map.png"/>
-      </div>
-    </div>
-    <div class="col-sm-8 col-md-8">
-      <div class="row">
-        <div class="col-sm-6 col-md-6">
-          <h1>Number of Transactions Monitored</h1>
-          <p>360</p>
-          <p>
-            <span>TODAY</span>
-            <span>1 WK</span>
-            <span>1 MO</span>                
-          <p>
-        </div>
-        <div class="col-sm-6 col-md-6">
-          <h1>Total $ Amounts Monitored</h1>
-         <p>$12,364</p>
-          <p>
-            <span>TODAY</span>
-            <span>1 WK</span>
-            <span>1 MO</span>                
-          <p>
+    <div class="row">
+      <div class="col-sm-4 col-md-4">
+        <div>
+          <h1>Total $ Monitored</h1>
+          <p id="overall-suspicious">$12,364</p>
+          <img id="bar-stacked" src="assets/bar-stacked.png" />
+          <span style="margin-right: 10px"><strong>TODAY</strong></span><span style="margin-right: 10px">1 WEEK</span><span>1 MONTH</span>
         </div>
       </div>
-      <div>
-        <h1>Recent Transactions</h1>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Vendor</th>
-              <th>Amount ($)</th>
-              <th>Status</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Cotton Candy</td>
-              <td>$12,000</td>
-              <td>Pending</td>
-              <td><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-flag"></span><span class="glyphicon glyphicon-chevron-down"></span></td>
-            </tr>
-            <tr>
-              <td>Cotton Candy</td>
-              <td>$8,230</td>
-              <td>Completed</td>
-            </tr>
-            <tr>
-              <td>Cotton Candy</td>
-              <td>$6,250</td>
-              <td>Completed</td>
-            </tr>
-            <tr>
-              <td>Cotton Candy</td>
-              <td>$4,608</td>
-              <td>Pending</td>
-            </tr>
-            <tr>
-              <td>Cotton Candy</td>
-              <td>$3,206</td>
-              <td>Pending</td>
-            </tr>
-            <tr>
-              <td>Cotton Candy</td>
-              <td>$2,805</td>
-              <td>Completed</td>
-            </tr>
-            <tr>
-              <td>Cotton Candy</td>
-              <td>$1,200</td>
-              <td>Completed</td>
-            </tr>
-            <tr>
-              <td>Cotton Candy</td>
-              <td>$800</td>
-              <td>Completed</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>          
+      <div class="col-sm-8 col-md-8">
+        <div id="txn-alerts">
+            <h1>Transaction Alerts</h1>
+            <table class="table alerts">
+              <thead>
+                <tr>
+                  <th>Vendor</th>
+                  <th>Amount</th>
+                  <th>Age</th>
+                  <th style="text-align: right">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Chupa Chups</td>
+                  <td>$8,600</td>
+                  <td>1 week</td>
+                  <td><span class="glyphicon glyphicon-flag"></span></td>
+                </tr>
+                <tr>
+                  <td>Bonbon Danish</td>
+                  <td>$2,300</td>
+                  <td>4 days</td>
+                  <td><span class="glyphicon glyphicon-flag"></span></td>
+                </tr>
+                <tr>
+                  <td>Sugar Plum</td>
+                  <td>$1,500</td>
+                  <td>8 hours</td>
+                  <td><span class="glyphicon glyphicon-question-sign"></span></td>
+                </tr>
+                <tr>
+                  <td>Cotton Candy</td>
+                  <td>$600</td>
+                  <td>30 minutes</td>
+                  <td><span class="glyphicon glyphicon-flag"></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
     </div>
-</div>
-</body>
+
+    <div class="row">
+        <div class="col-sm-4 col-md-4">
+          <div id="acct-breakdown">
+            <h1>Account Breakdown</h1>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Account Name</th>
+                  <th>Health</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Bank of America</td>
+                  <td><span class="glyphicon glyphicon-adjust"></span></td>
+                  <td>$244,295</td>
+                </tr>
+                <tr>
+                  <td>Small Credit Union</td>
+                  <td><span class="glyphicon glyphicon-adjust"></span></td>
+                  <td>$123,439</td>
+                </tr>
+                <tr>
+                  <td>Coolest Bank Ever</td>
+                  <td><span class="glyphicon glyphicon-adjust"></span></td>
+                  <td>$97,363</td>
+                </tr>
+                <tr>
+                  <td>Alternate Bank</td>
+                  <td><span class="glyphicon glyphicon-adjust"></span></td>
+                  <td>$56,043</td>
+                </tr>
+<!--                 <tr>
+                  <td>Other Bank</td>
+                  <td><span class="glyphicon glyphicon-adjust"></span></td>
+                  <td>$35,203</td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <h1>Transaction Types</h1>
+            <img id="donut-chart" src="assets/donut-chart.png"/>
+          </div>
+          <div>
+            <h1>Activity Location</h1>
+            <img id="map" src="assets/map.png"/>
+          </div>
+        </div>
+        <div class="col-sm-8 col-md-8">
+          <div id="alert-bkdn">
+            <h1>Alert Breakdown</h1>
+            <div>
+              <h2>6</h2>
+              <p>$4,204</p>
+              <h3>BREACHED</h3>
+            </div>
+            <div>
+              <h2>4</h2>
+              <p>$1,060</p>
+              <h3>SUBMITTED</h3>
+            </div>            
+            <div>
+              <h2>2</h2>
+              <p>$7,000</p>
+              <h3>ALL CLEAR</h3>
+            </div>
+            <div>
+              <span style="margin-right: 10px"><strong>TODAY</strong></span><span style="margin-right: 10px">1 WEEK</span><span>1 MONTH</span>
+            </div>
+          </div>
+          <div>
+            <h1>Recent Transactions</h1>
+            <table class="table transactions">
+              <thead>
+                <tr>
+                  <th>Vendor</th>
+                  <th>Amount ($)</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="transaction">
+                  <td class="vendor">Cotton Candy</td>
+                  <td class="amount">$12,000</td>
+                  <td class="status">Pending</td>
+                  <td class="actions"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-flag"></span></td>
+                </tr>
+                <tr>
+                  <td>Cotton Candy</td>
+                  <td>$8,230</td>
+                  <td>Completed</td>
+                  <td><span class="glyphicon glyphicon-star" style="color: #FFDE17"></span><span class="glyphicon glyphicon-flag"></span></td>
+                </tr>
+                <tr>
+                  <td>Cotton Candy</td>
+                  <td>$6,250</td>
+                  <td>Completed</td>
+                  <td><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-flag"></span></td>
+                </tr>
+                <tr>
+                  <td>Cotton Candy</td>
+                  <td>$4,608</td>
+                  <td>Pending</td>
+                  <td><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-flag"></span></td>
+                </tr>
+                <tr>
+                  <td>Cotton Candy</td>
+                  <td>$3,206</td>
+                  <td>Pending</td>
+                  <td><span class="glyphicon glyphicon-star" style="color: #FFDE17"></span><span class="glyphicon glyphicon-flag"></span></td>
+                </tr>
+                <tr>
+                  <td>Cotton Candy</td>
+                  <td>$2,805</td>
+                  <td>Completed</td>
+                  <td><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-flag"></span></td>
+                </tr>
+                <tr>
+                  <td>Cotton Candy</td>
+                  <td>$1,200</td>
+                  <td>Completed</td>
+                  <td><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-flag"></span></td>
+                </tr>
+                <tr>
+                  <td>Cotton Candy</td>
+                  <td>$800</td>
+                  <td>Completed</td>
+                  <td><span class="glyphicon glyphicon-star" style="color: #FFDE17"></span><span class="glyphicon glyphicon-flag"></span></td>
+                </tr>
+                <tr>
+                  <td>Cotton Candy</td>
+                  <td>$600</td>
+                  <td>Completed</td>
+                  <td><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-flag"></span></td>
+                </tr>
+                <tr>
+                  <td>Cotton Candy</td>
+                  <td>$300</td>
+                  <td>Completed</td>
+                  <td><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-flag"></span></td>
+                </tr>
+                <tr>
+                  <td>Cotton Candy</td>
+                  <td>$800</td>
+                  <td>Completed</td>
+                  <td><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-flag"></span></td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="glyphicon glyphicon-star"></span>Recurring Transaction
+            <span class="glyphicon glyphicon-flag"></span>Flag as Suspicious
+          </div>          
+        </div>
+    </div>
+  </body>
 </html>

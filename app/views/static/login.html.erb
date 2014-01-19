@@ -6,6 +6,8 @@
     <!-- Bootstrap -->
     <%= stylesheet_link_tag "login" %>
 
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -16,7 +18,7 @@
   <body>
 
   <div>
-    <img src="assets/barrier-logo-white.png">
+    <img src="assets/barrier-logo.png">
     <form id="login">
       <label for="username">Username</label>
       <input type="text" id="username" autofocus required>
@@ -24,14 +26,12 @@
       <label for="password">Password</label>
       <input type="password" id="password" required>
       <br>
-      <input type="submit" id="loginBtn" value="Log In">
+      <div>
+        <input type="submit" id="loginBtn" value="Log In">
+      </div>
     </form>
   </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
     var form = document.getElementById('login');
     form.onsubmit = function(event){

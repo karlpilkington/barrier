@@ -1,21 +1,35 @@
 @import "bootstrap";
 
 body{
-  background-color: #1C75BC;
-  color: #FFF;
+  background-color: #EDEDED;
+  color: #1C75BC;
   font-size: 12px;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+}
+body>div:first-child{
+  border: 1px solid #AAAAAA;
+  margin-top: 10%;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 8px;
+  background-color: #FFF;
+  text-align: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 img{
-  width: 20%;
+  width: 40%;
+  margin-bottom: 10px;
 }
 label{
   text-transform: uppercase;
   font-weight: lighter;
   width: 100px;
+  color: #1C75BC;
 }
 input{
   margin-bottom: 10px;
-  border: none;
+  border: 1px solid #AAAAAA;
   border-radius: 4px;
   height: 30px;
   width: 200px;
@@ -25,13 +39,20 @@ input{
 input:focus{
   outline: 0;
     /*box-shadow: 0 0 10px #99E2FF;*/
-    border: 1px solid #FFF;
+    border: 1px solid #1C75BC;
     background-color: white;
 }
-input[type="submit"]:hover{
-  background-color: #FFF;
+input div{
+  text-align: right;
 }
-div{
-  text-align: center;
-  padding-top: 10%;
+#loginBtn{
+  background-color: #1C75BC;
+  text-transform: uppercase;
+  color: #FFF;
+  font-size: 1.2em;
+  width: 40%;
+}
+#loginBtn:hover,
+#loginBtn:active{
+  background: (28, 117, 188, 0.7);
 }

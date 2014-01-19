@@ -1,32 +1,126 @@
 @import "bootstrap";
-
 /*GLOBAL*/
+html,body{
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+}
 .row{
   margin: 40px 0px;
-}
-
-/*LANDING PAGE*/
-#logo{
-  width: 30%;
-}
-#main{
-  background-color: #1C75BC;
-  color: #FFF;
-}
-.navbar-nav{
-  margin-top: 10px;
 }
 h1{
   margin-left: 15px;
 }
-.col-md-4 div{
+/*NAVIGATION*/
+#logo{
+  width: 30%;
+}
+.navbar-nav{
+  margin-top: 10px;
+  float: right
+}
+.navbar-nav li:nth-child(3) a{
+  padding-right: 40px;
+}
+.navbar{
+  margin-bottom: 0;
+}
+.navbar-nav>li:nth-child(4)>a{
+  border-right: 1px solid #AAAAAA;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.navbar-nav>li:nth-child(3)>a{
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/*MAIN*/
+#main{
+  background-color: #EDEDED;
+/*  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0, #FFFFFF),
+    color-stop(0.89, #404040)
+  );
+  background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #404040 89%);
+  background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #404040 89%);
+  background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #404040 89%);
+  background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #404040 89%);
+  background-image: linear-gradient(to bottom, #FFFFFF 0%, #404040 89%);*/
+
+  color: #000;
+  height: 100%;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 15%;
+}
+#main h1{
+  color: #1C75BC;
+  margin-left: 0px;
+}
+#main p{
+  font-size: 1.4em;
+  line-height: 1.3em;
+  margin-top: 20px;
+}
+#main img{
+  width: 100%;
+}
+#main button{
+  width: 120px;
+  height: 35px;
+  border-radius: 4px;
+  /*text-transform: uppercase;*/
+  color: #FFF;
+  font-size: 1.1em;
+  border: none;
+  margin-top: 20px;
+}
+#main button:nth-child(3){
+  background-color: #1C75BC;
+}
+#main button:nth-child(4){
+  background-color: #737373;
+}
+
+/* HOW WORKS */
+#how-works{
+  height: 100%;
+  width: 100%;
+  padding-top: 5%;
+}
+#how-works img{
+  width: 45%;
+}
+#how-works .col-md-4 div:not(.img-centered){
   border: 1px solid #000;
-  margin-left: 2%;
-  margin-right: 2%;
+  height: 300px;
   border-radius: 10px;
   padding-left: 2%;
   padding-right: 2%;
+  background-color: #AAAAAA;
+  width: 80%;
+
 }
-button{
-  margin-bottom: 20px;
+#how-works .img-centered{
+  text-align: center;
+}
+#how-works h2{
+  margin-left: 30px;
+  font-size: 3.4em;
+}
+
+/* BENEFITS */
+#benefits{
+  height: 100%;
+  width: 100%;
+  padding-top: 5%;
+  background-color: #EDEDED;
 }
