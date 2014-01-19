@@ -19,12 +19,12 @@ $(document).ready(function(){
 var i = 0
 
 var transactions  = [
-  '<tr><td>1</td><td>$2000</td><td>pending</td><td><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-flag"></span></td></tr>',
-  '<tr><td>2</td><td>$500</td><td>pending</td><td><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-flag"></span></td></tr>',
-  '<tr><td>3</td><td>$10000</td><td>pending</td><td><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-flag"></span></td></tr>'
+  '<tr><td>HP</td><td>$2,000</td><td>pending</td><td><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-flag"></span></td></tr>',
+  '<tr><td>Brita</td><td>$500</td><td>pending</td><td><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-flag"></span></td></tr>',
+  '<tr><td>Coffee Espresso</td><td>$10,000</td><td>pending</td><td><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-flag"></span></td></tr>'
 ]
 
-var alert_html = '<tr style="background-color: rgba(237, 28, 36, 0.5);"><td>1</td><td>$2,300</td><td>now</td><td><span class="glyphicon glyphicon-flag"></span></td></tr>'
+var alert_html = '<tr style="background-color: rgba(237, 28, 36, 0.5);"><td>Payroll</td><td>$2,300</td><td>now</td><td><span class="glyphicon glyphicon-flag"></span></td></tr>'
 
 function addThisRow(row)
 {
