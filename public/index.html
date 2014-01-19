@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+var lastIndx;
+$( document ).ready(function() {
+ 
+  addLines();
+ 
+});
+
+function addLines()
+{
+var txt = '';
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function()
+
+{
+  if(xmlhttp.status==200 && xmlhttp.readyState==4)
+  {
+    txt=xmlhttp.responseText;
+    var json = txt;
+    obj = JSON.parse(json);
+    //for (var i = 0; i < obj.transactions.length; i++) {
+    for (var i = 0; i < 10; i++) {
+       addRowDelayed(obj.transactions[i],i);  
+    }    
+    lastIndx = 10;
+  }
+}
+
+xmlhttp.open("GET","./transactions.html",true);
+xmlhttp.send();
+};
+
+function addRowDelayed(transaction, indx)
+{
+   setTimeout(function(){ addRow(transaction,indx); }, 1000*indx);
+}
+
+function addRow(transaction, indx)
+{
+         if (!document.getElementsByTagName) return;
+         tabBody=document.getElementsByTagName("TBODY").item(0);
+         row=tabBody.insertRow(1);
+         //row = document.createElement("TR");
+         cell1 = document.createElement("TD");
+         cell2 = document.createElement("TD");
+         cell3 = document.createElement("TD");
+         cell4 = document.createElement("TD");
+         cell5 = document.createElement("TD");
+         cell6 = document.createElement("TD");
+         cell7 = document.createElement("TD");
+         textnode1=document.createTextNode(transaction.id);
+         textnode2=document.createTextNode(transaction.amount);
+         textnode3=document.createTextNode(transaction.date);
+         textnode4=document.createTextNode(transaction.category);
+         textnode5=document.createTextNode(transaction.name);
+         textnode6=document.createTextNode(transaction.location.city);
+         textnode7=document.createTextNode(transaction.location.state);
+         cell1.appendChild(textnode1);
+         cell2.appendChild(textnode2);
+         cell3.appendChild(textnode3);
+         cell4.appendChild(textnode4);
+         cell5.appendChild(textnode5);
+         cell6.appendChild(textnode6);
+         cell7.appendChild(textnode7);
+         row.appendChild(cell1);
+         row.appendChild(cell2);
+         row.appendChild(cell3);
+         row.appendChild(cell4);
+         row.appendChild(cell5);
+         row.appendChild(cell6);
+         row.appendChild(cell7);
+         
+         //row.insertAfter('#tableRow').animate({ backgroundColor: "#bce4b4" }, "fast");
+         //row.hide().insertAfter($("#tblHeader")).slideDown('slow');
+         //row.find('td').wrapInner('<div style="display: none;" />').parent().prependTo(tabBody).find('td > div').slideDown('slow', function(){ var $set = $(this);$set.replaceWith($set.contents());}); 
+         addThisRow(row);
+}
+
+function addThisRow(row)
+{
+  $(row).find('td')
+ .wrapInner('<div style="display: none;" />')
+ .parent()
+ .find('td > div')
+ .slideDown(350, function(){
+
+  var $set = $(this);
+  $set.replaceWith($set.contents());
+
+ });
+}
+
+var obj;
+</script>
+</head>
+<body>
+
+  
+<p>Header...</p> <br/>
+
+  
+<br/>
+<button onClick='addRow(obj.transactions[lastIndx++]);return false;'>
+Add Row</button>
+<br/><br/>
+<table border='1' id='mytable'>
+<tbody>
+<tr id="tblHeader"><td>id</td><td>amount</td><td>date</td><td>category</td><td>name</td><td>city</td><td>state</td></tr>
+</tbody>
+</table>
+
+
+
+
+ <p>...Footer</p>
+
+</body>
+</html>
