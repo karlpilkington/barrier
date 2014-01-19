@@ -1,0 +1,86 @@
+@import "bootstrap";
+
+/*NAVIGATION*/
+#logo{
+  width: 30%;
+}
+.navbar{
+  margin-bottom: 10px;
+}
+/*BODY*/
+body{
+  background-color: #EDEDED;
+  font-size: 12px;
+}
+h1{
+  font-size: 1.8em;
+  margin-top: 10px;
+}
+.row{ 
+  margin-left: 0;
+  margin-right: 0;
+}
+.col-md-4{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.col-md-8{
+  padding-left: 0px;
+  padding-right: 10px;
+}
+.col-md-4 div,
+.col-md-8 div{
+  border: 1px solid #1A1A1A;
+  background-color: #FFF;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 4px;
+/*  overflow-y: auto;
+  overflow-x: hidden;*/
+}
+.col-md-8 div{
+  margin-left: 0;
+}
+.col-md-8 .row{
+  padding-left: 0;
+  border: none;
+  background-color: transparent;
+  margin-right: 0;
+}
+.col-md-8 .row .col-md-6{
+  margin-right: 0;
+  width: 49%;
+}
+.col-md-8 .row .col-md-6:first-child{
+  margin-right: 2%;
+}
+#map{
+  width: 100%;
+  margin-bottom: 10px;
+}
+#donut-chart{
+  width: 200px;
+  margin-left: 20%;
+  margin-bottom: 10px;
+}
+.table{
+  margin-bottom: 10px;
+}
+/* SUSPICION DIVS*/
+div:nth-child(2) .col-md-4 div:first-child,
+div:nth-child(2) .col-md-8 div:first-child{
+  height: 260px;
+}
+#overall-suspicious{
+  font-size: 8em;
+  color: #F26344;
+}
+/* ALL OTHER DIVS*/
+div:nth-child(3) .col-md-4 div,
+div:nth-child(3) .col-md-8 div{
+  height: 260px;
+}
+div:nth-child(3) .col-md-8>div:nth-child(2){
+  height: 530px;
+}

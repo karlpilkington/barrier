@@ -1,0 +1,32 @@
+@import "bootstrap";
+
+/*GLOBAL*/
+.row{
+  margin: 40px 0px;
+}
+
+/*LANDING PAGE*/
+#logo{
+  width: 30%;
+}
+#main{
+  background-color: #1C75BC;
+  color: #FFF;
+}
+.navbar-nav{
+  margin-top: 10px;
+}
+h1{
+  margin-left: 15px;
+}
+.col-md-4 div{
+  border: 1px solid #000;
+  margin-left: 2%;
+  margin-right: 2%;
+  border-radius: 10px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+button{
+  margin-bottom: 20px;
+}

@@ -6,6 +6,11 @@ StartupWeekend::Application.routes.draw do
   root 'static#home'
 
   get 'twilio/send_message' => 'twilio#send_message'
+
+  get '/login' => 'static#login'
+
+  get '/dashboard' => 'static#dashboard'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
