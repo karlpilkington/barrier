@@ -10,6 +10,7 @@ $(document).ready(function(){
       addThisRow('.alerts tbody tr:first-child')
       $('.alerts tbody tr:first-child').animate({backgroundColor: "#FFF"},7000);
       $('.alerts tbody tr:last-child').remove();
+      $.get('/twilio/send_message')
     }
     i++;
   })
