@@ -10,7 +10,10 @@ $(document).ready(function(){
       addThisRow('.alerts tbody tr:first-child')
       $('.alerts tbody tr:first-child').animate({backgroundColor: "#FFF"},7000);
       $('.alerts tbody tr:last-child').remove();
-      $.get('/twilio/send_message')
+      //$.get('/twilio/send_message');
+      $('#overall-suspicious').html("$963,164");
+      $('#new-alerts').html("7");
+      $('#new-alerts-total').html("$6,504");
     }
     i++;
   })
